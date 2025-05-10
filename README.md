@@ -46,18 +46,6 @@ As escolhas feitas visaram equilibrar simplicidade, agilidade e legibilidade, co
 
 ter os seguintes itens instalados:
 
-### Docker
-1. Descomentar no .env a SA_PASSWORD
-2. Navegue até a pasta do backend
-```bash
-cd backend
-```
-3. nela crie o container
-```bash
-docker-compose up
-```
-4. faça as alteraçoes nescessarias no .env para a conexão com o container e alterar no db.go na pasta database
-
 ### Backend (Golang)
 
 - [Golang](https://golang.org/dl/) (versao 1.24.2 minimo)
@@ -70,6 +58,20 @@ docker-compose up
 ---
 
 ## clonar repositorio
+
+
+## Docker
+1. Descomentar no .env a SA_PASSWORD
+2. Navegue até a pasta do backend
+```bash
+cd backend
+```
+3. nela crie o container
+```bash
+docker-compose up
+```
+4. faça as alteraçoes nescessarias no .env para a conexão com o container e alterar no db.go na pasta database
+
 
 ## Backend (Golang)
 1. Navegue até a pasta do backend
