@@ -12,7 +12,7 @@ Este é um projeto de gerenciamento de animais e seus cuidados, desenvolvido com
 
 - **Golang com Gin:** Escolhi por ser uma linguagem compilada, de alta performance, com otima escalabilidade e tipagem forte — caracteristicas semelhantes ao C#. O framework Gin foi adotado por ser simples e robusto para construir APIs REST.
 - **React com Vite:** Popularidade e robustez. O uso do Vite se justifica tambem pela descontinuação do suporte oficial ao Create React App (CRA) e performance superior.
-- **Supabase como banco de dados:** Optei pelo Supabase por ser uma solução open-source baseada em PostgreSQL, que facilita a configuração e desenvolvimento, elimina a necessidade de configurar um banco local ou servidor.
+- **Supabase como banco de dados:** Optei pelo Supabase por ser uma solução baseada em PostgreSQL, que facilita a configuração e desenvolvimento, elimina a necessidade de configurar um banco local ou servidor, mas o projeto conta com uma migração chamada init e docker compose para sql server
 
 ## Estrutura e Organização
 
@@ -45,6 +45,18 @@ As escolhas feitas visaram equilibrar simplicidade, agilidade e legibilidade, co
 ## Requisitos
 
 ter os seguintes itens instalados:
+
+### Docker
+1. Descomentar no .env a SA_PASSWORD
+2. Navegue até a pasta do backend
+```bash
+cd backend
+```
+3. nela crie o container
+```bash
+docker-compose up
+```
+4. faça as alteraçoes nescessarias no .env para a conexão com o container e alterar no db.go na pasta database
 
 ### Backend (Golang)
 
