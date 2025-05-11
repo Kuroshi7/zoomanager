@@ -100,6 +100,14 @@ npm install
 ```bash
 npm run dev
 ```
+### Preview da apliação
+![image](https://github.com/user-attachments/assets/5c4feaa0-a2c4-4e76-a941-3a0a21b1c476)
+![image](https://github.com/user-attachments/assets/997baf12-2897-4cb4-9f4f-95f186710ac1)
+![image](https://github.com/user-attachments/assets/84d413e3-13a0-4c25-bf49-d354e3f8f9f3)
+![image](https://github.com/user-attachments/assets/a1c26aac-690b-4ca5-b581-468c99504d1f)
+
+
+
 
 ## Observações
 Verificar se a URL base da API no frontend está apontando para http://localhost:8080 (por padrao no backend) ou para possivel configuração nescessaria.
