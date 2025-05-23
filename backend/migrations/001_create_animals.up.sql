@@ -1,11 +1,11 @@
-CREATE TABLE IF NOT EXISTS animals(
+CREATE TABLE IF NOT EXISTS animals (
     id UUID PRIMARY KEY,
-    nome VARCHAR(255) NOT NULL,
-    descricao TEXT,
-    data_nascimento DATE,
-    especie VARCHAR(100) NOT NULL,
-    habitat VARCHAR(255),
-    pais_origem VARCHAR(255),
-    created_at TIMESTAMP NOT NULL,
-    updated_at TIMESTAMP NOT NULL
+    nome TEXT NOT NULL,
+    descricao TEXT NULL,
+    data_nascimento DATE NULL,
+    especie TEXT NOT NULL,
+    habitat TEXT NULL,
+    pais_origem TEXT NULL,
+    created_at TIMESTAMPTZ NULL,
+    updated_at TIMESTAMPTZ NULL
 );

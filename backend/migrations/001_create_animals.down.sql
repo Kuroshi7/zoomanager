@@ -1,1 +1,1 @@
-DROP TABLE animais;
+DROP TABLE animals;

@@ -2,7 +2,7 @@ import axios from "axios"
 import type { Animal } from "../types"
 
 
-const API_BASE_URL = "http://localhost:8080/api"
+const API_BASE_URL = "https://zoomanager-backend.onrender.com/api"
 
 export const animalService = {
     async getAll(): Promise<Animal[]> {
