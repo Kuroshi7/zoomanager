@@ -36,14 +36,14 @@ func runMigrations() {
 	if err := m.Drop(); err != nil {
 		log.Fatalf("Erro ao dropar schema: %v", err)
 	}
-	log.Println("🔁 Banco resetado com sucesso")
+	log.Println("🔁 Banco resetado com sucesso!")
 
 	// Aplica todas as migrations novamente
 	if err := m.Up(); err != nil && err != migrate.ErrNoChange {
 		log.Fatalf("Erro ao aplicar migrations: %v", err)
 	}
 
-	log.Println("✅ Migrations reaplicadas com sucesso")
+	log.Println("✅ Migrations reaplicadas com sucesso!")
 }
 
 func main() {
