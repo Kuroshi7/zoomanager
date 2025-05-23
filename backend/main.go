@@ -56,7 +56,7 @@ func main() {
 
 	allowOrigins := []string{"http://localhost:5173"}
 	if os.Getenv("ENV") == "production" {
-		allowOrigins = []string{"dominio.vercel.app"}
+		allowOrigins = []string{"*"}
 	}
 
 	r.Use(cors.New(cors.Config{
