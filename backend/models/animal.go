@@ -15,5 +15,5 @@ type Animal struct {
 	Habitat        *string    `json:"habitat"`        
 	PaisOrigem     *string    `json:"paisOrigem"`     
 	CreatedAt      time.Time  `json:"createdAt"`
-	UpdatedAt 	   time.Time  `json:"updatedAt"`
+	UpdatedAt 	   *time.Time  `json:"updatedAt"`
 }

@@ -114,7 +114,8 @@ func UpdateAnimal(c *gin.Context) {
 		return
 	}
 
-	animal.UpdatedAt = time.Now()
+	now := time.Now()
+	animal.UpdatedAt = &now
 	
 	_, err = database.DB.Exec(
 		"UPDATE animals SET nome = $1, descricao = $2, data_nascimento = $3, especie = $4, habitat = $5, pais_origem = $6, updated_at = $7 WHERE id = $8",
