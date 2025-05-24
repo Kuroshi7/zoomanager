@@ -1,16 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { animalService } from "../../services/animalService";
+import type { Animal } from "../../types";
 
-interface Animal {
-    id: number;
-    nome: string;
-    descricao: string;
-    dataNascimento: string;
-    especie: string;
-    habitat: string;
-    paisOrigem: string;
-}
 
 const DetalhesAnimal = () => {
     const { id } = useParams<{ id: string }>(); // Obter o ID da URL
@@ -22,8 +14,8 @@ const DetalhesAnimal = () => {
         const fetchAnimal = async () => {
             try {
 
-                const response = await axios.get(`http://localhost:8080/api/animais/${id}`);
-                setAnimal(response.data);
+            const data = await animalService.getById(id!)
+            setAnimal(data)
             } catch (error) {
                 console.error("Erro ao buscar dados do animal:", error);
                 alert("Erro ao carregar dados do animal");
@@ -41,16 +33,19 @@ const DetalhesAnimal = () => {
     const handleRemover = async () => {
         if (window.confirm("Tem certeza que deseja remover este animal?")) {
             try {
-
-                await axios.delete(`http://localhost:8080/api/animais/${id}`);
-
-                alert("Animal removido com sucesso!");
-                navigate("/animais");
+                await animalService.delete(id!)
+                alert("Animal removido com sucesso!")
+                navigate("/animais")
             } catch (error) {
-                console.error("Erro ao remover animal:", error);
-                alert("Erro ao remover animal. Tente novamente.");
+                console.error("Erro ao remover animal:", error)
+                alert("Erro ao remover animal. Tente novamente.")
             }
         }
+    };
+
+    const formatarData = (data: string | undefined | null): string => {
+    if (!data) return "Data não informada";
+    return new Date(data).toLocaleDateString("pt-BR");
     };
 
     if (loading) {
@@ -93,7 +88,7 @@ const DetalhesAnimal = () => {
                     <div className="detail-row">
                         <div className="detail-item">
                             <strong>Data de Nascimento:</strong>
-                            <p>{new Date(animal.dataNascimento).toLocaleDateString("pt-BR")}</p>
+                            <p>{formatarData(animal.dataNascimento)}</p>
                         </div>
 
                         <div className="detail-item">
